@@ -1,0 +1,66 @@
+                                         -------------------Linux Commands:---------------------------
+
+
+1.cd                                  -> changes directory
+2.pwd                                 -> show current directory
+3.ifconfig                            -> to show current ip address
+4.ping                                -> to test the reachabilty of network
+5.clear                               -> to clear the terminal
+6.apt -get update && apt -get upgrade -> to download and upgrade the new packages of linux .
+7.uname                               -> gives username
+8.uname -r                            -> gives recursive details
+9.uname -a                            -> gives all details
+10.history                            -> gives the history of previous fired commands
+11.ls                                 -> gives list of all directories
+12.cd Desktop/                        -> move to desktop directory
+13.touch test                         -> to create a file with name "test"
+14.touch test.txt                     -> create a text file
+15.rm test.txt                        -> to remove a file
+16.mkdir dirname                      -> to create a directory or folder 
+17.rmdir dirname                      -> to remove a directory or folder
+18.man ls                             -> gives the command manual
+19.cp test /home/                     -> copy file test in home directory
+20.whoami                             -> gives the username
+21.cd ..                              -> move to one previous level directory
+22.cd ../..                           -> move to multiple previous level directory
+23.cd ~                               -> move to home directory
+24.cd ~/Desktop                       -> move to desktop folder
+25.cd /var/log                        -> move directory to /var/log directory 
+26.mv text new                        -> change the name of file (for eg. text is renamed as new)
+27.locate filename                    -> to find the location of a file.
+28.cat filename                       -> to open a file
+29.echo data >> filename              -> to write or add data in a file
+30.nano filename                      -> open a file in nano editor
+31.df -m                              -> to see the available space in each partition in system
+32.chmod +x filename.py               -> to make a file executable
+33.hostname                           -> gives the hostname in the network
+34.hostname -I                        -> gives the ip address of the network
+35.ps -aux                            -> gives the list of processes running on computer
+36.top                                -> gives the list of process which are refreshing itself
+37.kill 1234(pid)                     -> to end any program that is running in background
+38.service --status-all               -> to print the list of services in the system
+39.service bluetooth status           -> to print a detailed status of a particular service
+40.sudo service bluetooth restart     -> to restart the particular running service
+41.sudo service bluetooth stop        -> to stop the particular running service
+42.mv text.py location                -> move the "text.py" file into location directory
+43.cp /home/beryl/dir1/file.txt
+      /home/beryl/                    -> take the file from the absolute path and copy it into the particular abolute path
+44.ls -R                              -> shows the directories inside the directories until all directories opens
+45.touch .filename                    -> to create a hidden file which cannot be seen using ls
+46.ls -a                              -> to print hidden also
+47.printf "hello\n"                   -> print hello on command line
+48.sudo apt install package_name      -> install the packages
+49.chmod 526 filename                 -> to change the permissions of a file for owner or group or others
+50.ps -ef                             -> gives the processes id of all the processes running in system
+51.sudo su                            -> to change from regular user to sudo user
+52.vim filename                       -> to open a file in vim editor
+53.sudo apt install vim               -> to install vim editor
+54.exit                               -> to switch back to normal user again from super user
+55.i                                  -> to insert or write something in vim editor
+56.esc                                -> to escape from insertion 
+57):q                                 -> to exit from a vim editor without saving the file
+58):wq                                -> to exit from a vim editor after saving the file
+59):q!                                -> to exit from vim without doing any changes in vim editor
+
+
+                              

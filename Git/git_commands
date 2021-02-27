@@ -1,0 +1,35 @@
+1.git --version                                                        -> gives the version of git
+2.git status                                                           -> shows if you have any git repository or not
+3.git init                                                             -> initiates a empty repository into a git respository
+4.git add .                                                            -> it stages new and modified files ,but not deletd files
+5.git add filename                                                     -> it stages a particular file
+6.git add -A                                                           -> stages all files
+7.git add -u                                                           -> it stages modified and deleted files ,but not new files
+8.git commit -m "message"                                              -> it commits the staged files
+9.git commit -m "message" filename                                     -> it commits a particular file
+10.git log                                                             -> it shows all the history of commits
+11.git config --global user.name                                       -> it gives the name of the user
+12.git config --global user.name "name"                                -> it sets the username
+13.git config --global user.email                                      -> it gives the email of the user
+14.git config --global user.email                                      -> it sets the email of the user
+15.git remote add origin sshkey                                        -> it connects the local system to remote system
+16.git push origin master                                              -> pushes the changes to remote system
+17.git push -u origin master                                           -> pushes the changes as a whole branch to remote system
+18.git pull origin master                                              -> pull the data or files from the remote system
+19.git diff                                                            -> show the changes btw all old and new file (for files in working directory)
+20.git diff filename                                                   -> shows the diff btw a particular old and new file(in working directory )
+21.git diff --staged                                                   -> shows old and new diff for all the staged files
+22.git diff --staged filename                                          -> shows diff for a particular file
+23.git reset filename                                                  -> to again move file back from staged to unstaged dir
+24.git checkout .                                                      -> to again go to old commit if the file in working dir
+25.git checkout myfile                                                 -> to go to old commit(particular file)
+26.git clone sshkey                                                    -> to clone a repository from a github or other 
+27.git branch                                                          -> show the available branches in the local system
+28.git branch new                                                      -> creates a new branch
+29.git checkout branchname                                             -> to switch from branch to other 
+30.git merge branchname                                                -> to merge one branch into other
+31.git branch -d branchname                                            -> to delete a branch in local system
+32.git push origin --delete branchname                                 -> to delete a branch in remote system
+  
+
+        
