@@ -28,7 +28,7 @@ end
 
 
 m1=Mixin.new
-# Here now m1 object is capable of calling the methods of above modules also using mixin technique
+# Here now m1 object is capable of calling the methods of above modules also, By using mixin technique
 m1.show
 m1.name
 m1.age
