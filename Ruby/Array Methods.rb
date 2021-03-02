@@ -56,3 +56,84 @@ puts "#{Arr2.concat(ror)}"
 puts "#{Arr2}"
 puts "#{ror}"
 
+#16 delete method
+puts "#{ror.delete("harsh")}"
+puts "#{ror}"
+puts "#{ror.delete(8) {"not in array"}}"
+
+#17 delete_at method
+ puts "#{ror.delete_at(2)}"
+puts "#{ror}"
+
+
+#18 delete_if method
+ror[2]=3
+puts "#{ror.delete_if { |x| x<2}}"
+puts "#{ror}"
+
+
+#19 empty? method
+puts "#{ror.empty?}"
+
+#20 equal? method
+puts "#{ror.eql?(Arr2)}"
+
+
+#21 fetch method
+puts "#{ror.fetch(1)}"
+#puts "#{ror.fetch(2)}"
+#puts "#{ror.fetch(2, default)}"
+#puts "#{ror.fetch(2) {|2| "harsh"}}"
+
+
+# fill method
+puts "#{ror.fill(8)}"
+
+
+# first method
+new=Array[1,4,6,2,9,4,5]
+puts "#{new.first}"
+puts "#{new.first(5)}"
+
+
+# flatten method
+two=Array[[1,2,3,4,5],[8,9,6,4,3]]
+puts "#{two.flatten}"
+puts "#{two}"
+puts "#{two.flatten!}"
+puts "#{two}"
+
+# frozen in array
+puts "#{new.frozen?}"
+
+# hash
+puts "#{new.hash}"
+
+# include keyword in array
+puts "#{new.include?(2)}"
+
+# index method
+puts "#{new.index(4)}"
+
+#insert method
+puts "#{new.insert(1,10)}"
+puts "#{new}"
+
+# inspect method
+puts "#{new.inspect}"
+
+# join method
+puts "#{new.join(sep=$,)}"
+
+#last method
+puts "#{new.last}"
+puts "#{new.last(3)}"
+
+
+# nitems in array
+#puts "#{new.nitems}"
+
+
+#pop in array
+puts "#{new.pop}"
+puts "#{new}"
