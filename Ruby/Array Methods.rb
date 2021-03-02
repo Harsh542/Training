@@ -86,54 +86,126 @@ puts "#{ror.fetch(1)}"
 #puts "#{ror.fetch(2) {|2| "harsh"}}"
 
 
-# fill method
+#22 fill method
 puts "#{ror.fill(8)}"
 
 
-# first method
+#23 first method
 new=Array[1,4,6,2,9,4,5]
 puts "#{new.first}"
 puts "#{new.first(5)}"
 
 
-# flatten method
+#24 flatten method
 two=Array[[1,2,3,4,5],[8,9,6,4,3]]
 puts "#{two.flatten}"
 puts "#{two}"
-puts "#{two.flatten!}"
+#puts "#{two.flatten!}"
 puts "#{two}"
 
-# frozen in array
+#25 frozen in array
 puts "#{new.frozen?}"
 
-# hash
+#26 hash
 puts "#{new.hash}"
 
-# include keyword in array
+#27 include keyword in array
 puts "#{new.include?(2)}"
 
-# index method
+#28 index method
 puts "#{new.index(4)}"
 
-#insert method
+#29 insert method
 puts "#{new.insert(1,10)}"
 puts "#{new}"
 
-# inspect method
+#30 inspect method
 puts "#{new.inspect}"
 
-# join method
+#31 join method
 puts "#{new.join(sep=$,)}"
 
-#last method
+#32 last method
 puts "#{new.last}"
 puts "#{new.last(3)}"
 
 
-# nitems in array
+#33 nitems in array
 #puts "#{new.nitems}"
 
 
-#pop in array
+#34 pop in array
 puts "#{new.pop}"
 puts "#{new}"
+
+#35 push in array
+puts "#{new}"
+puts "#{new.push(16)}"
+puts "#{new}"
+
+#36 reject in array
+puts "#{new.reject{|x| x>6}}"
+puts "#{new}"
+puts "#{new.reject!{|x| x>6}}"
+puts "#{new}"
+
+
+#37 replace method
+N=new.clone
+puts "#{new.replace(ror)}"
+puts "#{new}"
+puts "#{N}"
+
+
+#38 reverse method
+puts "#{N.reverse}"
+puts "#{N}"
+puts "#{N.reverse!}"
+puts "#{N}"
+
+
+
+#39 rindex method
+puts "#{N.rindex(4)}"
+
+#40 shift in array
+puts "#{N.shift}"
+puts "#{N}"
+
+#41 unshift in array
+puts "#{N.unshift(6)}"
+puts "#{N}"
+
+
+#42 size in array
+puts "#{N.size}"
+
+#43 sort in array
+puts "#{N.sort}"
+puts "#{N}"
+
+
+#44 sort! in array
+puts "#{N.sort!}"
+puts "#{N}"
+
+puts "-------------"
+
+#45 to_a , to_s ,to_ary
+pg=N.to_a
+puts "#{pg}"
+
+
+#46 transpose
+puts "#{two}"
+puts "#{two.transpose}"
+
+
+#47 uniq in array
+puts "#{N.uniq}"
+puts "#{N.uniq!}"
+
+#48 values_at method
+puts "#{N.values_at(0,2,3)}"
+
+
