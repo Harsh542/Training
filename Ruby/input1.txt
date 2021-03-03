@@ -1,1 +1,1 @@
-hello this is file input and output
+hello i have wriiten something in file
