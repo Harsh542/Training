@@ -15,7 +15,7 @@ class Box
   end
   private :getwidth ,:getheight  #----> making these two methods Private
 
-  def printArea
+  def printArea #----> this is protected class
     @area=getheight * getwidth
     puts "the area of inside is :#@area"
   end
@@ -26,4 +26,4 @@ box=Box.new(10,20)
 x=box.getArea  #------>This will not show any error because the getArea method is public
 puts "the area of outside is:#{x}"
 
-box.printArea  #------> This will show error because the printArea method is protected and can only be called by Box's subclass.
+box.printArea  #------> This will show error because the printArea method is protected and can only be called from Box's subclass.
