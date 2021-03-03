@@ -1,13 +1,12 @@
 
 begin
-  (0..10).each do |i|
+  ans=catch(:done) do
+    (0..10).each do |i|
     throw :done if i == 7
     puts i
-  end
-   catch(:done) do
-    puts ans
     end
-end
+  end
+  end
 
 =begin
 def promptAndGet(prompt)
