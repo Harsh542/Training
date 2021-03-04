@@ -13,7 +13,7 @@ box=Box.allocate
 x=box1.printArea
 puts "The area is:#{x}"
 
-y=box.printArea
+y=box.printArea  #-->This will give error bcoz the box object does not have initialize method and thats why can't run printArea method
 puts "The area is:#{y}"
 
 
