@@ -9,3 +9,5 @@ class Constant
 end
 c1=Constant.new
 c1.show
+puts Constant::VAR1
+puts Constant::VAR2
