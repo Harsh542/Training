@@ -7,7 +7,8 @@ class Person
   end
 
   def +(other_object)
-  return "name:#{self.name}#{other_object.name}","state:#{self.state}#{other_object.state}"
+    #return "name:#@name#{other_object.name}","state:#@state#{other_object.state}"
+    return @name + other_object.name , @state + other_object.state
   end
 end
 
