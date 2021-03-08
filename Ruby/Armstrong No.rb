@@ -20,3 +20,4 @@ def arm(n)
 print "Enter a number to check:"
 n=gets.chomp.to_i
 arm n
+puts "hello"
