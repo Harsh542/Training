@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RUBY_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="RailsFacetType" name="Ruby on Rails">
+      <configuration>
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_SUPPORT_REMOVED" VALUE="false" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_TESTS_SOURCES_PATCHED" VALUE="true" />
+        <RAILS_FACET_CONFIG_ID NAME="RAILS_FACET_APPLICATION_ROOT" VALUE="$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates" />
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates">
+      <sourceFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/features" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/test" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/.bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/public/packs" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/vendor/bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/vendor/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/log" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/public/system" />
+      <excludeFolder url="file://$MODULE_DIR$/../../blog/vendor/ruby/3.0.0/gems/railties-5.0.7.2/lib/rails/generators/rails/plugin/templates/components" />
+    </content>
+    <orderEntry type="jdk" jdkName="ruby-2.5.1-p57" jdkType="RUBY_SDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" scope="PROVIDED" name="bundler (v2.2.13, ruby-2.5.1-p57) [gem]" level="application" />
+  </component>
+  <component name="RubyModuleProperties">
+    <option name="autoCreated" value="true" />
+  </component>
+</module>
