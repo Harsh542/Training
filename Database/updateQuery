@@ -1,0 +1,33 @@
+<------Update queries --------------->
+
+
+update emp set salary=34000 where id=3;
+
+ id |   name   | age |                      address                       | salary 
+----+----------+-----+----------------------------------------------------+--------
+  1 | Harsh    |  21 | Faridabad                                          |  50000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad                       |  40000
+  4 | Ajay     |  20 | Sector-12 Faridabad                                |  35000
+  5 | Ravi     |  25 | Meethapur Delhi                                    |  45000
+  6 | Manish   |  23 | 60 foot road Nit Faridabad                         |  42000
+  7 | Prince   |  26 | Mohan state Delhi                                  |  48000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad                      |  38000
+  3 | Karan    |  24 | Bageshwar uttarakhand                              |  34000
+(8 rows)
+
+
+
+update emp set address='Parvatiya colony Nit Faridabad' where id=1;
+
+ id |   name   | age |                      address                       | salary 
+----+----------+-----+----------------------------------------------------+--------
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad                       |  40000
+  4 | Ajay     |  20 | Sector-12 Faridabad                                |  35000
+  5 | Ravi     |  25 | Meethapur Delhi                                    |  45000
+  6 | Manish   |  23 | 60 foot road Nit Faridabad                         |  42000
+  7 | Prince   |  26 | Mohan state Delhi                                  |  48000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad                      |  38000
+  3 | Karan    |  24 | Bageshwar uttarakhand                              |  34000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad                     |  50000
+(8 rows)
+
