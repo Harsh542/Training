@@ -1,0 +1,15 @@
+<---This is a group By clause----->
+
+select name,max(salary) from emp group by name;
+   name   |  max  
+----------+-------
+ Rahul    | 40000
+ Ajay     | 35000
+ Harsh    | 55000
+ Manpreet | 38000
+ Manish   | 44000
+ Ravi     | 45000
+ Karan    | 34000
+ Prince   | 48000
+(8 rows)
+
