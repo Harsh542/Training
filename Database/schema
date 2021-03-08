@@ -1,0 +1,18 @@
+CREATE SCHEMA name;   --> to create a schema
+
+
+create table myschema.company(    --> To create a table in schema
+   ID   INT              NOT NULL,
+   NAME VARCHAR (20)     NOT NULL,
+   AGE  INT              NOT NULL,
+   ADDRESS  CHAR (25),
+   SALARY   DECIMAL (18, 2),
+   PRIMARY KEY (ID)
+);
+
+
+select * from myschema.company;  ----> To see the table in schema
+
+
+DROP SCHEMA myschema; ---> To drop a schema
+
