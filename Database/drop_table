@@ -1,0 +1,1 @@
+DROP TABLE table_name;   --->This will drop the table
