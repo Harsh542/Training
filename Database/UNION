@@ -1,0 +1,34 @@
+<------UNION------>
+
+select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e LEFT JOIN department d ON e.dept_id=d.dept_id  UNION select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e RIGHT JOIN department d ON e.dept_id = d.dept_id;
+ 
+emp_id | first_name | last_name | dept_id | dept_name 
+--------+------------+-----------+---------+-----------
+    102 | Edwin      | Thomas    |      11 | Marketing
+    101 | Steven     | Cohen     |      10 | IT
+    103 | Harry      | Potter    |         | 
+    100 | Erick      | John      |         | 
+        |            |           |      14 | Shipping
+        |            |           |      13 | Resources
+(6 rows)
+
+
+
+
+
+<-----UNION ALL------->
+
+select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e LEFT JOIN department d ON e.dept_id=d.dept_id  UNION ALL  select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e RIGHT JOIN department d ON e.dept_id = d.dept_id;
+ 
+emp_id | first_name | last_name | dept_id | dept_name 
+--------+------------+-----------+---------+-----------
+    101 | Steven     | Cohen     |      10 | IT
+    102 | Edwin      | Thomas    |      11 | Marketing
+    100 | Erick      | John      |         | 
+    103 | Harry      | Potter    |         | 
+    101 | Steven     | Cohen     |      10 | IT
+    102 | Edwin      | Thomas    |      11 | Marketing
+        |            |           |      13 | Resources
+        |            |           |      14 | Shipping
+(8 rows)
+
