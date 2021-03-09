@@ -1,0 +1,20 @@
+<----------Constraints---------------->
+not null,unique,check,primary key,foreign key etc
+
+create table student(Roll_no int Not NuLl,Name varchar(20) unique ,city varchar(20),Age int check (Age>10),primary key (Roll_no));
+
+insert into student values(1,'Harsh','Faridabad',21);
+insert into student values(2,'Karan','palwal',22);
+insert into student values(3,'Manish','Faridabad',22);
+
+select * from student;
+ roll_no |  name  |   city    | age 
+---------+--------+-----------+-----
+       1 | Harsh  | Faridabad |  21
+       2 | Karan  | palwal    |  22
+       3 | Manish | Faridabad |  22
+(3 rows)
+
+
+<---foreig key--------->
+create table monitor(id int,section varchar(5),grade varchar(5),foreign key (id) references student (roll_no));
