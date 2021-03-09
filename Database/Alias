@@ -1,0 +1,33 @@
+<----------Alias----------->
+
+select * from student;  ------->Table 1
+ roll_no |  name  |   city    | age 
+---------+--------+-----------+-----
+       1 | Harsh  | Faridabad |  21
+       2 | Karan  | palwal    |  22
+       3 | Manish | Faridabad |  22
+(3 rows)
+
+select * from monitor;  --------->Table 2
+ id | section | grade 
+----+---------+-------
+  2 | B       | A
+  1 | D       | B
+(2 rows)
+
+
+1.  select s.roll_no , s.name , m.section from student s ,monitor m where s.roll_no = m.id;
+   roll_no | name  | section 
+  ---------+-------+---------
+         2 | Karan | B
+         1 | Harsh | D
+  (2 rows)
+
+
+2.   select s.roll_no AS student_roll_no ,s.name AS student_name , m.section AS monitor_section from student s , monitor m where s.roll_no = m.id;
+   student_roll_no | student_name | monitor_section 
+  -----------------+--------------+-----------------
+                 2 | Karan        | B
+                 1 | Harsh        | D
+  (2 rows)
+
