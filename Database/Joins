@@ -1,0 +1,120 @@
+               <---------------Joins------------------->
+
+
+select * from employee;
+ emp_id | first_name | last_name | salary | dept_id 
+--------+------------+-----------+--------+---------
+    103 | Harry      | Potter    |  20000 |      12
+    102 | Edwin      | Thomas    |  15000 |      11          -------->TABLE 1
+    101 | Steven     | Cohen     |  10000 |      10
+    100 | Erick      | John      |  10000 |      12
+(4 rows)
+
+
+
+select * from department;
+ dept_id | dept_name | manager_id | location_id 
+---------+-----------+------------+-------------
+      10 | IT        |        200 |        1700
+      11 | Marketing |        201 |        1800             -------->TABLE 2
+      13 | Resources |        203 |        2400
+      14 | Shipping  |        121 |        1500
+(4 rows)
+
+
+<------------1.Inner join---------------->
+
+select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e INNER JOIN department d ON e.dept_id = d.dept_id;
+ emp_id | first_name | last_name | dept_id | dept_name 
+--------+------------+-----------+---------+-----------
+    101 | Steven     | Cohen     |      10 | IT
+    102 | Edwin      | Thomas    |      11 | Marketing
+(2 rows)
+
+
+
+
+
+
+
+
+<------------2.Left outer join------------>
+
+select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e LEFT OUTER JOIN department d ON e.dept_id = d.dept_id;
+ emp_id | first_name | last_name | dept_id | dept_name 
+--------+------------+-----------+---------+-----------
+    101 | Steven     | Cohen     |      10 | IT
+    102 | Edwin      | Thomas    |      11 | Marketing
+    100 | Erick      | John      |         | 
+    103 | Harry      | Potter    |         | 
+(4 rows)
+
+
+
+
+
+
+
+<------------3.Right outer join----------->
+
+select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e RIGHT OUTER JOIN department d ON e.dept_id = d.dept_id;
+ emp_id | first_name | last_name | dept_id | dept_name 
+--------+------------+-----------+---------+-----------
+    101 | Steven     | Cohen     |      10 | IT
+    102 | Edwin      | Thomas    |      11 | Marketing
+        |            |           |      13 | Resources
+        |            |           |      14 | Shipping
+(4 rows)
+
+
+
+
+
+
+
+<------------4.Full outer join------------>
+
+select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e FULL OUTER JOIN department d ON e.dept_id = d.dept_id;
+ emp_id | first_name | last_name | dept_id | dept_name 
+--------+------------+-----------+---------+-----------
+    101 | Steven     | Cohen     |      10 | IT
+    102 | Edwin      | Thomas    |      11 | Marketing
+        |            |           |      13 | Resources
+        |            |           |      14 | Shipping
+    100 | Erick      | John      |         | 
+    103 | Harry      | Potter    |         | 
+(6 rows)
+
+
+
+
+
+
+
+
+<------------5.Cross join----------------->
+
+select e.emp_id , e.first_name , e.last_name , d.dept_id , d.dept_name from employee e CROSS JOIN department d ;
+ emp_id | first_name | last_name | dept_id | dept_name 
+--------+------------+-----------+---------+-----------
+    103 | Harry      | Potter    |      10 | IT
+    102 | Edwin      | Thomas    |      10 | IT
+    101 | Steven     | Cohen     |      10 | IT
+    100 | Erick      | John      |      10 | IT
+    103 | Harry      | Potter    |      11 | Marketing
+    102 | Edwin      | Thomas    |      11 | Marketing
+    101 | Steven     | Cohen     |      11 | Marketing
+    100 | Erick      | John      |      11 | Marketing
+    103 | Harry      | Potter    |      13 | Resources
+    102 | Edwin      | Thomas    |      13 | Resources
+    101 | Steven     | Cohen     |      13 | Resources
+    100 | Erick      | John      |      13 | Resources
+    103 | Harry      | Potter    |      14 | Shipping
+    102 | Edwin      | Thomas    |      14 | Shipping
+    101 | Steven     | Cohen     |      14 | Shipping
+    100 | Erick      | John      |      14 | Shipping
+(16 rows)
+
+
+
+
