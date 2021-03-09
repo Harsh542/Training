@@ -1,0 +1,26 @@
+   <-------------------Trigger--------------------->
+
+
+->create table audit( emp_id int not null, entry_date text not null);  ---->creating an audit table
+
+
+
+->CREATE OR REPLACE FUNCTION auditlogfunc()    -----> creating a trigger function
+  RETURNS TRIGGER AS $example_table$ 
+  BEGIN  
+  INSERT INTO AUDIT(EMP_ID, ENTRY_DATE) VALUES (new.ID, current_timestamp); 
+  RETURN NEW; 
+  END; 
+  $example_table$ LANGUAGE plpgsql;
+
+
+->CREATE TRIGGER example_trigger AFTER INSERT ON emp1 FOR EACH ROW EXECUTE PROCEDURE auditlogfunc();  --->creatiing a trigger
+
+->insert into emp1 values(15,'raj',30,'sector-10 faridabad',20000);  -->inserting value in emp1 table
+
+->select * from audit;          ---> entry is created in a audit table
+  emp_id |            entry_date            
+  --------+----------------------------------
+      15 | 2021-03-09 17:30:19.387767+05: 30
+  (1 row)
+
