@@ -1,0 +1,27 @@
+ id |   name   | age |                      address                       | salary 
+----+----------+-----+----------------------------------------------------+--------
+  4 | Ajay     |  20 | Sector-12 Faridabad                                |  35000
+  3 | Karan    |  24 | Bageshwar uttarakhand                              |  34000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad                      |  38000
+  9 | Ajay     |  29 | sector-28 Faridabad                                |  28000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad                       |  40000
+  5 | Ravi     |  25 | Meethapur Delhi                                    |  45000
+  6 | Manish   |  23 | 60 foot road Nit Faridabad                         |  42000
+  7 | Prince   |  26 | Mohan state Delhi                                  |  48000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad                     |  50000
+ 10 | Harsh    |  23 | Nainital uttarakhand                               |  55000
+ 11 | Manish   |  21 | Bhagat singh colony Ballavgarh                     |  44000
+(11 rows)
+
+
+<-----Having clause--------->
+
+select name from emp group by name having count(name)>1;
+  
+ name  
+--------
+ Ajay
+ Harsh
+ Manish
+(3 rows)
+
