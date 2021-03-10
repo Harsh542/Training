@@ -1,0 +1,95 @@
+<------------Nested Queries------------------->
+
+
+select * from emp1 where id in (select id from emp where salary > 40000);
+ id |  name  | age |            address             | salary 
+----+--------+-----+--------------------------------+--------
+  5 | Ravi   |  25 | Meethapur Delhi                |  45000
+  6 | Manish |  23 | 60 foot road Nit Faridabad     |  42000
+  7 | Prince |  26 | Mohan state Delhi              |  48000
+  1 | Harsh  |  21 | Parvatiya colony Nit Faridabad |  50000
+ 10 | Harsh  |  23 | Nainital uttarakhand           |  55000
+ 11 | Manish |  21 | Bhagat singh colony Ballavgarh |  44000
+(6 rows)
+
+---------------------------------------------------------------------------------------------------
+
+insert into emp1 select * from emp where id in (select id from emp);
+INSERT 0 11
+employee=# select * from emp1;
+ id |   name   | age |            address             | salary 
+----+----------+-----+--------------------------------+--------
+  4 | Ajay     |  20 | Sector-12 Faridabad            |  35000
+  3 | Karan    |  24 | Bageshwar uttarakhand          |  34000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad  |  38000
+  9 | Ajay     |  29 | sector-28 Faridabad            |  28000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad   |  40000
+  5 | Ravi     |  25 | Meethapur Delhi                |  45000
+  6 | Manish   |  23 | 60 foot road Nit Faridabad     |  42000
+  7 | Prince   |  26 | Mohan state Delhi              |  48000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad |  50000
+ 10 | Harsh    |  23 | Nainital uttarakhand           |  55000
+ 11 | Manish   |  21 | Bhagat singh colony Ballavgarh |  44000
+  4 | Ajay     |  20 | Sector-12 Faridabad            |  35000
+  3 | Karan    |  24 | Bageshwar uttarakhand          |  34000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad  |  38000
+  9 | Ajay     |  29 | sector-28 Faridabad            |  28000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad   |  40000
+  5 | Ravi     |  25 | Meethapur Delhi                |  45000
+  6 | Manish   |  23 | 60 foot road Nit Faridabad     |  42000
+  7 | Prince   |  26 | Mohan state Delhi              |  48000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad |  50000
+ 10 | Harsh    |  23 | Nainital uttarakhand           |  55000
+ 11 | Manish   |  21 | Bhagat singh colony Ballavgarh |  44000
+(22 rows)
+
+------------------------------------------------------------------------------------------------
+
+update emp1 set salary = salary * 0.5 where age in (select age from emp where age > 22);
+UPDATE 12
+employee=# select * from emp1;
+ id |   name   | age |            address             | salary  
+----+----------+-----+--------------------------------+---------
+  4 | Ajay     |  20 | Sector-12 Faridabad            |   35000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad  |   38000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad   |   40000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad |   50000
+ 11 | Manish   |  21 | Bhagat singh colony Ballavgarh |   44000
+  4 | Ajay     |  20 | Sector-12 Faridabad            |   35000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad  |   38000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad   |   40000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad |   50000
+ 11 | Manish   |  21 | Bhagat singh colony Ballavgarh |   44000
+  3 | Karan    |  24 | Bageshwar uttarakhand          | 17000.0
+  9 | Ajay     |  29 | sector-28 Faridabad            | 14000.0
+  5 | Ravi     |  25 | Meethapur Delhi                | 22500.0
+  6 | Manish   |  23 | 60 foot road Nit Faridabad     | 21000.0
+  7 | Prince   |  26 | Mohan state Delhi              | 24000.0
+ 10 | Harsh    |  23 | Nainital uttarakhand           | 27500.0
+  3 | Karan    |  24 | Bageshwar uttarakhand          | 17000.0
+  9 | Ajay     |  29 | sector-28 Faridabad            | 14000.0
+  5 | Ravi     |  25 | Meethapur Delhi                | 22500.0
+  6 | Manish   |  23 | 60 foot road Nit Faridabad     | 21000.0
+  7 | Prince   |  26 | Mohan state Delhi              | 24000.0
+ 10 | Harsh    |  23 | Nainital uttarakhand           | 27500.0
+(22 rows)
+
+----------------------------------------------------------------------------------------------
+
+delete from emp1 where age in (select age from emp1 where age > 22);
+DELETE 12
+employee=# select * from  emp1;
+ id |   name   | age |            address             | salary 
+----+----------+-----+--------------------------------+--------
+  4 | Ajay     |  20 | Sector-12 Faridabad            |  35000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad  |  38000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad   |  40000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad |  50000
+ 11 | Manish   |  21 | Bhagat singh colony Ballavgarh |  44000
+  4 | Ajay     |  20 | Sector-12 Faridabad            |  35000
+  8 | Manpreet |  18 | Guru Dwara Road Nit Faridabad  |  38000
+  2 | Rahul    |  22 | jawahar colony Nit Faridabad   |  40000
+  1 | Harsh    |  21 | Parvatiya colony Nit Faridabad |  50000
+ 11 | Manish   |  21 | Bhagat singh colony Ballavgarh |  44000
+(10 rows)
+
