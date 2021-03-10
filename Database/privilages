@@ -1,0 +1,22 @@
+<----Privilages------------>
+
+
+
+create user karan with password 'password';
+CREATE ROLE
+employee=# \du
+                                   List of roles
+ Role name |                         Attributes                         | Member of 
+-----------+------------------------------------------------------------+-----------
+ harsh     | Superuser                                                  | {}
+ kalyan    | Create role, Create DB                                     | {}
+ karan     |                                                            | {}
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | {}
+ postgres1 |                                                            | {}
+ postgres2 |                                                            | {}
+
+employee=# grant all on emp1 to karan;
+GRANT
+employee=# revoke all on emp1 from karan;
+REVOKE
+
