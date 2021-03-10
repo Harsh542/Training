@@ -1,0 +1,30 @@
+<-------------Serial datatype---------------->
+
+
+create table serial (id serial,name varchar(10),age int);
+
+insert into serial (name,age) values('harsh',20);
+INSERT 0 1
+
+employee=# insert into serial (name,age) values('rahul',21);
+INSERT 0 1
+
+employee=# insert into serial (name,age) values('karan',23);
+INSERT 0 1
+
+employee=# insert into serial (name,age) values('vicky',24);
+INSERT 0 1
+
+employee=# insert into serial (name,age) values('manish',19);
+INSERT 0 1
+
+employee=# select * from serial;
+ id |  name  | age 
+----+--------+-----
+  1 | harsh  |  20
+  2 | rahul  |  21
+  3 | karan  |  23
+  4 | vicky  |  24
+  5 | manish |  19
+(5 rows)
+
