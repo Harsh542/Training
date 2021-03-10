@@ -1,0 +1,57 @@
+   <----------Indexes--------->
+
+
+<---1.Single Indexes---->
+create index ind_name ON emp(name); 
+CREATE INDEX
+employee=# \d emp;
+                    Table "public.emp"
+ Column  |     Type      | Collation | Nullable | Default 
+---------+---------------+-----------+----------+---------
+ id      | integer       |           | not null | 
+ name    | text          |           | not null | 
+ age     | integer       |           | not null | 
+ address | character(50) |           |          | 
+ salary  | real          |           |          | 
+Indexes:
+    "emp_pkey" PRIMARY KEY, btree (id)  -----> This is a Implicit Index (automaticaly created)
+    "ind_name" btree (name)
+
+
+
+<---2.Multiple Indexes---->
+create index new_index ON  emp(age,address); 
+CREATE INDEX
+employee=# \d emp;
+                    Table "public.emp"
+ Column  |     Type      | Collation | Nullable | Default 
+---------+---------------+-----------+----------+---------
+ id      | integer       |           | not null | 
+ name    | text          |           | not null | 
+ age     | integer       |           | not null | 
+ address | character(50) |           |          | 
+ salary  | real          |           |          | 
+Indexes:
+    "emp_pkey" PRIMARY KEY, btree (id)
+    "ind_name" btree (name)
+    "new_index" btree (age, address)
+
+
+
+<---3.Unique Indexes---->
+create unique index all_index ON emp(id); 
+CREATE INDEX
+                   Table "public.emp"
+ Column  |     Type      | Collation | Nullable | Default 
+---------+---------------+-----------+----------+---------
+ id      | integer       |           | not null | 
+ name    | text          |           | not null | 
+ age     | integer       |           | not null | 
+ address | character(50) |           |          | 
+ salary  | real          |           |          | 
+Indexes:
+    "emp_pkey" PRIMARY KEY, btree (id)
+    "all_index" UNIQUE, btree (id)
+    "ind_name" btree (name)
+    "new_index" btree (age, address)
+
