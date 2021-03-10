@@ -1,0 +1,29 @@
+<----TRuncate table--------->
+
+
+select * from emp1;
+ id |  name  | age |           address            | salary 
+----+--------+-----+------------------------------+--------
+  2 | Rahul  |  22 | jawahar colony Nit Faridabad |  40000
+  6 | Manish |  23 | 60 foot road Nit Faridabad   |  42000
+  7 | Prince |  26 | Mohan state Delhi            |  48000
+ 10 | Harsh  |  23 | Nainital uttarakhand         |  55000
+  5 | Ravi   |     |                              |  45000
+  1 | Harsh  |     |                              |  50000
+ 11 | Manish |     |                              |  44000
+ 15 | raj    |  30 | sector-10 faridabad          |  20000
+(8 rows)
+
+
+TRUNCATE TABLE emp1;
+TRUNCATE TABLE
+
+select * from emp1;
+ id | name | age | address | salary 
+----+------+-----+---------+--------
+(0 rows)
+
+
+
+
+
