@@ -55,3 +55,26 @@ Indexes:
     "ind_name" btree (name)
     "new_index" btree (age, address)
 
+
+
+<----4.Partial Indexes------->
+create index part_index ON emp(salary) where salary > 40000;
+CREATE INDEX
+employee=# \d emp;
+                    Table "public.emp"
+ Column  |     Type      | Collation | Nullable | Default 
+---------+---------------+-----------+----------+---------
+ id      | integer       |           | not null | 
+ name    | text          |           | not null | 
+ age     | integer       |           | not null | 
+ address | character(50) |           |          | 
+ salary  | real          |           |          | 
+Indexes:
+    "emp_pkey" PRIMARY KEY, btree (id)
+    "all_index" UNIQUE, btree (id)
+    "ind_name" btree (name)
+    "new_index" btree (age, address)
+    "part_index" btree (salary) WHERE salary > 40000::double precision
+
+
+
