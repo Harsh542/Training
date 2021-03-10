@@ -1,0 +1,26 @@
+<----Views------->
+
+
+create view my_view as select id , name , salary from emp;
+CREATE VIEW
+
+
+select * from my_view;
+ id |   name   | salary 
+----+----------+--------
+  4 | Ajay     |  35000
+  3 | Karan    |  34000
+  8 | Manpreet |  38000
+  9 | Ajay     |  28000
+  2 | Rahul    |  40000
+  5 | Ravi     |  45000
+  6 | Manish   |  42000
+  7 | Prince   |  48000
+  1 | Harsh    |  50000
+ 10 | Harsh    |  55000
+ 11 | Manish   |  44000
+(11 rows)
+
+employee=# drop view my_view;
+DROP VIEW
+
