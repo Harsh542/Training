@@ -254,6 +254,14 @@ airline=# select ename from employee where eid in(select eid from certified wher
 
 ---------------------------------
 
+(K)->Print the name and salary of every nonpilot whose salary is more than theaverage salary for pilots.
+
+airline=# select ename ,salary_dollars from employee where eid not in(select eid from certified) and salary_dollars > (select avg(salary_dollars) from employee where eid in (select eid from certified));
+ ename | salary_dollars 
+-------+----------------
+ Jack  |         150000
+ Bravo |         105000
+(2 rows)
 
 
 
