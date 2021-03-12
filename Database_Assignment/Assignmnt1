@@ -214,6 +214,22 @@ select ename from employee where salary_dollars < (select min(price_dollars) fro
 
 
 ---------------------------------
+(D)->For all aircraft with cruisingrange over 1000 miles, find the name of theaircraft and the average salary of all pilots certified for this aircraft
+
+
+airline=# create view CE as select c.eid , c.aid, e.ename, e.salary_dollars from certified c inner join employee e using (eid);
+CREATE VIEW
+airline=# select a.aname , round(avg(e.salary_dollars)) as avg_salary from (select aname , aid from aircraft where cruisingrange_miles > 1000) as a inner join CE as e using (aid) group by a.aname;
+ aname  | avg_salary 
+--------+------------
+ EMB    |      79000
+ CRJ    |      70000
+ Boeing |      65000
+(3 rows)
+
+
+
+---------------------------------
 
 (E)->Find the names of pilots certified for some Boeing aircraft.
 
@@ -298,6 +314,8 @@ airline=# select ename ,salary_dollars from employee where eid not in(select eid
  Jack  |         150000
  Bravo |         105000
 (2 rows)
+
+
 
 
 
