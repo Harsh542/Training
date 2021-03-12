@@ -262,6 +262,17 @@ airline=# select ename from employee where eid in(select eid from certified wher
 (1 row)
 
 
+---------------------------------
+
+(J)->Compute the difference between the average salary of a pilot and the averagesalary of all employees (including pilots).
+
+airline=# select ((select avg(salary_dollars) from employee where eid in(select eid from certified))-(select avg(salary_dollars) from employee)) as "Avergae Difference";
+ Avergae Difference 
+--------------------
+ -3300.000000000000
+(1 row)
+
+
 
 ---------------------------------
 
