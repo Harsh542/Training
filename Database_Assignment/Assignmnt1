@@ -225,6 +225,20 @@ airline=# select aname from aircraft where cruisingrange_miles > (select min(dis
  EMB
 (2 rows)
 
+---------------------------------
+
+
+(G)->Identify the routes that can be piloted by every pilot who makes more than$100,000.
+
+
+airline=# select start , destination from flights as x inner join (select cruisingrange_miles from aircraft where aid in(select aid from pilot where salary_dollars > 100000)) as y on (x.distance_miles < y.cruisingrange_miles) group by start , destination;
+  
+start  | destination 
+---------+-------------
+ Atlanta | Orlando
+(1 row)
+
+
 
 ---------------------------------
 
