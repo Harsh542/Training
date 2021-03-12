@@ -1,3 +1,14 @@
+Questions1.
+The following relations keep track of airline flight information:
+Flights(flno: integer, from: string, to: string, distance: integer, departs:time,arrives: time, price: integer)
+Aircraft(aid: integer, aname: string, cruisingrange: integer)
+Certified(eid: integer, aid: integer)
+Employees(eid: integer, ename: string, salary: integer)
+
+
+
+
+
 <----flights Table--------->
 
 create table flights(fno int , start varchar(20) , destination varchar(20) , distance_miles int, departs time, arrives time , price_dollars int);
