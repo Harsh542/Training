@@ -35,24 +35,59 @@ hr_management_system=# select * from department;
 hr_management_system=# create table employee(emp_id int primary key,name varchar(30),address text,dob date,gender varchar(7),joining_date date,dept_id int references department(dept_id));
 CREATE TABLE
 
-hr_management_system=# insert into employee values(1,'Harsh','Parvatiya colony Nit Faridabad Haryana','2000-04-11','Male','2021-02-23',101);
+hr_management_system=# insert into employee values(1,'Harsh','Parvatiya colony Nit Faridabad Haryana','2000-04-11','Male','2021-02-23',101,Graduate Engineer Trainee);
 INSERT 0 1
-hr_management_system=# insert into employee values(2,'Rahul','Jawahar colony Nit Faridabad Haryana','1998-07-18','Male','2020-09-25',102);
+hr_management_system=# insert into employee values(2,'Rahul','Jawahar colony Nit Faridabad Haryana','1998-07-18','Male','2020-09-25',102,Junior Sales Executive);
 INSERT 0 1
-hr_management_system=# insert into employee values(3,'Karan','sector 3  Faridabad Haryana','1994-09-11','Male','2018-01-12',103);
+hr_management_system=# insert into employee values(3,'Karan','sector 3  Faridabad Haryana','1994-09-11','Male','2018-01-12',103,Junior Development Manager);
 INSERT 0 1
-hr_management_system=# insert into employee values(4,'shilpa','sector 23  Faridabad Haryana','1996-03-09','Female','2016-07-19',104);
+hr_management_system=# insert into employee values(4,'shilpa','sector 23  Faridabad Haryana','1996-03-09','Female','2016-07-19',104,Junior HR);
 INSERT 0 1
-hr_management_system=# insert into employee values(5,'deepti','bhagat colony  Ballavgarh  Haryana','1992-08-01','Female','2014-05-13',105);
+hr_management_system=# insert into employee values(5,'deepti','bhagat colony  Ballavgarh  Haryana','1992-08-01','Female','2014-05-13',105,Junior Quality Manager);
 INSERT 0 1
-hr_management_system=# insert into employee values(6,'Deepak','meethapur Delhi','1998-10-29','Male','2018-09-19',106);
+hr_management_system=# insert into employee values(6,'Deepak','meethapur Delhi','1998-10-29','Male','2018-09-19',106,Associate Developer);
 INSERT 0 1
-hr_management_system=# insert into employee values(7,'Manish','mohan state Delhi','1995-11-30','Male','2019-02-23',101);
+hr_management_system=# insert into employee values(7,'Manish','mohan state Delhi','1995-11-30','Male','2019-02-23',101,Developer Trainee);
 INSERT 0 1
-hr_management_system=# insert into employee values(8,'Siya','Janakpuri Delhi','1994-12-05','Female','2020-06-09',102);
+hr_management_system=# insert into employee values(8,'Siya','Janakpuri Delhi','1994-12-05','Female','2020-06-09',102,Senior Sales Executive);
 INSERT 0 1
-hr_management_system=# insert into employee values(9,'Deepika','karol Bagh  Delhi','1996-09-16','Female','2021-01-09',103);
+hr_management_system=# insert into employee values(9,'Deepika','karol Bagh  Delhi','1996-09-16','Female','2021-01-09',103,Senior Development Manager);
 INSERT 0 1
-hr_management_system=# insert into employee values(10,'Tina','Janakpuri  Delhi','1992-08-18','Female','2020-05-29',104);
+hr_management_system=# insert into employee values(10,'Tina','Janakpuri  Delhi','1992-08-18','Female','2020-05-29',104, Senior HR);
 INSERT 0 1
+hr_management_system=# insert into employee values(11,'Shikha','Palwal  Haryana','1999-04-12','Female','2020-02-17',105,Senior Quality Manager);
+INSERT 0 1
+hr_management_system=# insert into employee values(12,'Rahul','Parvatiya colony Faridabad  Haryana','1997-08-15','Male','2017-08-22',106,Senior Developer);
+INSERT 0 1
+hr_management_system=# insert into employee values(13,'Sachin','Dabua colony Faridabad  Haryana','1993-03-03','Male','2013-09-20',101,Developer Trainee);
+INSERT 0 1
+hr_management_system=# insert into employee values(14,'Diya','Sector-10  Haryana','1996-09-03','Female','2014-10-28',103,Junior Development Manager);
+INSERT 0 1
+hr_management_system=# insert into employee values(15,'Hemant','Rajiv Chauk Delhi','1995-11-05','Male','2018-06-22',105,Junior Quality Manager);
+INSERT 0 1
+hr_management_system=# insert into employee values(16,'Karishma','Kalkaji Delhi','1992-12-22','Female','2019-09-01',101, Graduate Engineer Trainee);
+INSERT 0 1
+
+
+hr_management_system=# select * from employee;
+ emp_id |   name   |                address                 |    dob     | gender | joining_date | dept_id |          position          
+--------+----------+----------------------------------------+------------+--------+--------------+---------+----------------------------
+      1 | Harsh    | Parvatiya colony Nit Faridabad Haryana | 2000-04-11 | Male   | 2021-02-23   |     101 | Graduate Engineer Trainee
+      2 | Rahul    | Jawahar colony Nit Faridabad Haryana   | 1998-07-18 | Male   | 2020-09-25   |     102 | Junior Sales Executive
+      3 | Karan    | sector 3  Faridabad Haryana            | 1994-09-11 | Male   | 2018-01-12   |     103 | Junior Development Manager
+      4 | shilpa   | sector 23  Faridabad Haryana           | 1996-03-09 | Female | 2016-07-19   |     104 | Junior HR
+      5 | deepti   | bhagat colony  Ballavgarh  Haryana     | 1992-08-01 | Female | 2014-05-13   |     105 | Junior Quality Manager
+      6 | Deepak   | meethapur Delhi                        | 1998-10-29 | Male   | 2018-09-19   |     106 | Associate Developer
+      7 | Manish   | mohan state Delhi                      | 1995-11-30 | Male   | 2019-02-23   |     101 | Developer Trainee
+      9 | Deepika  | karol Bagh  Delhi                      | 1996-09-16 | Female | 2021-01-09   |     103 | Senior Development Manager
+     10 | Tina     | Janakpuri  Delhi                       | 1992-08-18 | Female | 2020-05-29   |     104 | Senior HR
+     11 | Shikha   | Palwal  Haryana                        | 1999-04-12 | Female | 2020-02-17   |     105 | Senior Quality Manager
+     12 | Rahul    | Parvatiya colony Faridabad  Haryana    | 1997-08-15 | Male   | 2017-08-22   |     106 | Senior Developer
+     13 | Sachin   | Dabua colony Faridabad  Haryana        | 1993-03-03 | Male   | 2013-09-20   |     101 | Developer Trainee
+     14 | Diya     | Sector-10  Haryana                     | 1996-09-03 | Female | 2014-10-28   |     103 | Junior Development Manager
+     15 | Hemant   | Rajiv Chauk Delhi                      | 1995-11-05 | Male   | 2018-06-22   |     105 | Junior Quality Manager
+     16 | Karishma | Kalkaji Delhi                          | 1992-12-22 | Female | 2019-09-01   |     101 | Graduate Engineer Trainee
+      8 | Siya     | Janakpuri Delhi                        | 1994-12-05 | Female | 2020-06-09   |     102 | Senior Sales Executive
+(16 rows)
+
 
