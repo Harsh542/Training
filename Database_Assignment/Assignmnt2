@@ -32,7 +32,7 @@ hr_management_system=# select * from department;
 <----Employee table:----------------->
 
 
-hr_management_system=# create table employee(emp_id int primary key,name varchar(30),address text,dob date,gender varchar(7),joining_date date,dept_id int references department(dept_id));
+hr_management_system=# create table employee(emp_id int primary key,name varchar(30),address text,dob date,gender varchar(7),joining_date date,dept_id int references department(dept_id),position varchar(30));
 CREATE TABLE
 
 hr_management_system=# insert into employee values(1,'Harsh','Parvatiya colony Nit Faridabad Haryana','2000-04-11','Male','2021-02-23',101,Graduate Engineer Trainee);
@@ -89,5 +89,272 @@ hr_management_system=# select * from employee;
      16 | Karishma | Kalkaji Delhi                          | 1992-12-22 | Female | 2019-09-01   |     101 | Graduate Engineer Trainee
       8 | Siya     | Janakpuri Delhi                        | 1994-12-05 | Female | 2020-06-09   |     102 | Senior Sales Executive
 (16 rows)
+
+
+
+<-----Clients Table:---------->
+
+create table clients (cdep_id int,no_of_clients int);
+
+hr_management_system=# insert into clients values (101,4);
+INSERT 0 1
+hr_management_system=# insert into clients values (102,6);
+INSERT 0 1
+hr_management_system=# insert into clients values (103,2);
+INSERT 0 1
+hr_management_system=# insert into clients values (104,1);
+INSERT 0 1
+hr_management_system=# insert into clients values (105,3);
+INSERT 0 1
+hr_management_system=# insert into clients values (106,5);
+INSERT 0 1
+hr_management_system=# select * from clients ;
+ cdep_id | no_of_clients 
+---------+---------------
+     101 |             4
+     102 |             6
+     103 |             2
+     104 |             1
+     105 |             3
+     106 |             5
+(6 rows)
+
+
+
+<---Project Table:------------>
+
+create table project(pemp_id int,project_of varchar(30));
+
+hr_management_system=# insert into project values(1,'netgym');
+INSERT 0 1
+hr_management_system=# insert into project values(2,'trademarks');
+INSERT 0 1
+hr_management_system=# insert into project values(3,'google');
+INSERT 0 1
+hr_management_system=# insert into project values(5,'whirlpool');
+INSERT 0 1
+hr_management_system=# insert into project values(6,'gaonic');
+INSERT 0 1
+hr_management_system=# insert into project values(7,'gaonic');
+INSERT 0 1
+hr_management_system=# insert into project values(8,'netgym');
+INSERT 0 1
+hr_management_system=# insert into project values(9,'trademarks');
+INSERT 0 1
+hr_management_system=# insert into project values(11,'google');
+INSERT 0 1
+hr_management_system=# insert into project values(12,'google');
+INSERT 0 1
+hr_management_system=# insert into project values(13,'whirlpool');
+INSERT 0 1
+hr_management_system=# insert into project values(14,'netgym');
+INSERT 0 1
+hr_management_system=# insert into project values(15,'google');
+INSERT 0 1
+hr_management_system=# insert into project values(16,'trademarks');
+INSERT 0 1
+
+hr_management_system=# select * from project;
+ pemp_id | project_of 
+---------+------------
+       1 | netgym
+       2 | trademarks
+       3 | google
+       5 | whirlpool
+       6 | gaonic
+       7 | gaonic
+       8 | netgym
+       9 | trademarks
+      11 | google
+      12 | google
+      13 | whirlpool
+      14 | netgym
+      15 | google
+      16 | trademarks
+(14 rows)
+
+
+
+<----Attendance table:--------------->
+
+hr_management_system=# create table attendence_per_month(aemp_id int references employee(emp_id),time_in time,time_out time , late_entry int);
+CREATE TABLE
+
+hr_management_system=# insert into attendence_per_month values(1,'9:00','17:00',2,80);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(2,'9:00','17:00',1,90);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(3,'17:00','2:00',3,90);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(4,'17:00','2:00',0,98);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(5,'17:00','2:00',0,95);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(6,'9:00','17:00',1,90);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(7,'23:00','8:00',1,90);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(8,'23:00','8:00',2,85);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(9,'23:00','8:00',1,92);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(10,'23:00','8:00',1,89);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(11,'9:00','17:00',0,98);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(12,'9:00','17:00',1,95);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(13,'9:00','17:00',4,80);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(14,'17:00','2:00',2,88);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(15,'17:00','2:00',0,100);
+INSERT 0 1
+hr_management_system=# insert into attendence_per_month values(16,'17:00','2:00',0,100);
+INSERT 0 1
+
+hr_management_system=# select * from attendence_per_month ;
+ aemp_id | time_in  | time_out | late_entry | percentage 
+---------+----------+----------+------------+------------
+       3 | 17:00:00 | 02:00:00 |          3 |         90
+       4 | 17:00:00 | 02:00:00 |          0 |         98
+       5 | 17:00:00 | 02:00:00 |          0 |         95
+       7 | 23:00:00 | 08:00:00 |          1 |         90
+       8 | 23:00:00 | 08:00:00 |          2 |         85
+       9 | 23:00:00 | 08:00:00 |          1 |         92
+      10 | 23:00:00 | 08:00:00 |          1 |         89
+      11 | 09:00:00 | 17:00:00 |          0 |         98
+      12 | 09:00:00 | 17:00:00 |          1 |         95
+      13 | 09:00:00 | 17:00:00 |          4 |         80
+      14 | 17:00:00 | 02:00:00 |          2 |         88
+      15 | 17:00:00 | 02:00:00 |          0 |        100
+      16 | 17:00:00 | 02:00:00 |          0 |        100
+       1 | 09:00:00 | 17:00:00 |          2 |         80
+       2 | 09:00:00 | 17:00:00 |          1 |         90
+       6 | 09:00:00 | 17:00:00 |          1 |         90
+(16 rows)
+
+
+
+<---Leaves table:-------------------->
+
+hr_management_system=# create table leaves_per_month(lemp_id int references employee(emp_id),leaves_taken int,leaves_left int);
+CREATE TABLE
+
+hr_management_system=# insert into leaves_per_month  values(1,0,2);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(2,1,1);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(3,1,1);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(4,2,0);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(5,2,0);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(6,2,0);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(7,1,1);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(8,0,2);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(9,0,2);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(10,0,2);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(11,1,1);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(12,1,1);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(13,2,0);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(14,1,1);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(15,0,2);
+INSERT 0 1
+hr_management_system=# insert into leaves_per_month  values(16,0,2);
+INSERT 0 1
+
+hr_management_system=# select * from leaves_per_month ;
+ lemp_id | leaves_taken | leaves_left 
+---------+--------------+-------------
+       1 |            0 |           2
+       2 |            1 |           1
+       3 |            1 |           1
+       4 |            2 |           0
+       5 |            2 |           0
+       6 |            2 |           0
+       7 |            1 |           1
+       8 |            0 |           2
+       9 |            0 |           2
+      10 |            0 |           2
+      11 |            1 |           1
+      12 |            1 |           1
+      13 |            2 |           0
+      14 |            1 |           1
+      15 |            0 |           2
+      16 |            0 |           2
+(16 rows)
+
+
+<------Employee History table:------->
+
+hr_management_system=# create table emp_history(Hemp_id int references employee(emp_id),last_company varchar(30),Years_worked int);
+CREATE TABLE
+
+hr_management_system=# insert into emp_history values(1,'Rocket media',4);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(2,'Global tech ',5);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(3,'Alphacs ',3);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(4,'Alphacs ',2);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(5,'Mphasis',1);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(6,'Moglix',6);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(7,'Manacle',3);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(8,'Manacle',1);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(9,'Leeway',2);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(10,'Leeway',5);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(11,'Rocket media',8);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(12,'Rocket media',1);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(13,'Global tech',4);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(14,'Global tech',8);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(15,'Mphasis',2);
+INSERT 0 1
+hr_management_system=# insert into emp_history values(16,'Moglix',7);
+INSERT 0 1
+
+
+hr_management_system=# select * from emp_history ;
+ hemp_id | last_company | years_worked 
+---------+--------------+--------------
+       1 | Rocket media |            4
+       2 | Global tech  |            5
+       3 | Alphacs      |            3
+       4 | Alphacs      |            2
+       5 | Mphasis      |            1
+       6 | Moglix       |            6
+       7 | Manacle      |            3
+       8 | Manacle      |            1
+       9 | Leeway       |            2
+      10 | Leeway       |            5
+      11 | Rocket media |            8
+      12 | Rocket media |            1
+      13 | Global tech  |            4
+      14 | Global tech  |            8
+      15 | Mphasis      |            2
+      16 | Moglix       |            7
+(16 rows)
+
 
 
