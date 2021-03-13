@@ -1,0 +1,58 @@
+<---------------------------------------------HR Management Sysytem:---------------------------------------------------------------------------------->
+
+<----Department table:------>
+
+create table department(dept_id int primary key,dept_name varchar(20));
+hr_management_system=# insert into department values(101,'Trainee');
+INSERT 0 1
+hr_management_system=# insert into department values(102,'Sales');
+INSERT 0 1
+hr_management_system=# insert into department values(103,'Research and Developmemt');
+INSERT 0 1
+hr_management_system=# insert into department values(104,'Human Resource');
+INSERT 0 1
+hr_management_system=# insert into department values(105,'Quality Assurance');
+INSERT 0 1
+hr_management_system=# insert into department values(106,'Technical operations');
+INSERT 0 1
+
+hr_management_system=# select * from department;
+ dept_id |        dept_name         
+---------+--------------------------
+     101 | Trainee
+     102 | Sales
+     103 | Research and Developmemt
+     104 | Human Resource
+     105 | Quality Assurance
+     106 | Technical operations
+(6 rows)
+
+
+
+<----Employee table:----------------->
+
+
+hr_management_system=# create table employee(emp_id int primary key,name varchar(30),address text,dob date,gender varchar(7),joining_date date,dept_id int references department(dept_id));
+CREATE TABLE
+
+hr_management_system=# insert into employee values(1,'Harsh','Parvatiya colony Nit Faridabad Haryana','2000-04-11','Male','2021-02-23',101);
+INSERT 0 1
+hr_management_system=# insert into employee values(2,'Rahul','Jawahar colony Nit Faridabad Haryana','1998-07-18','Male','2020-09-25',102);
+INSERT 0 1
+hr_management_system=# insert into employee values(3,'Karan','sector 3  Faridabad Haryana','1994-09-11','Male','2018-01-12',103);
+INSERT 0 1
+hr_management_system=# insert into employee values(4,'shilpa','sector 23  Faridabad Haryana','1996-03-09','Female','2016-07-19',104);
+INSERT 0 1
+hr_management_system=# insert into employee values(5,'deepti','bhagat colony  Ballavgarh  Haryana','1992-08-01','Female','2014-05-13',105);
+INSERT 0 1
+hr_management_system=# insert into employee values(6,'Deepak','meethapur Delhi','1998-10-29','Male','2018-09-19',106);
+INSERT 0 1
+hr_management_system=# insert into employee values(7,'Manish','mohan state Delhi','1995-11-30','Male','2019-02-23',101);
+INSERT 0 1
+hr_management_system=# insert into employee values(8,'Siya','Janakpuri Delhi','1994-12-05','Female','2020-06-09',102);
+INSERT 0 1
+hr_management_system=# insert into employee values(9,'Deepika','karol Bagh  Delhi','1996-09-16','Female','2021-01-09',103);
+INSERT 0 1
+hr_management_system=# insert into employee values(10,'Tina','Janakpuri  Delhi','1992-08-18','Female','2020-05-29',104);
+INSERT 0 1
+
