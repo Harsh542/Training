@@ -1,0 +1,127 @@
+<----------------------------------------------------------HR Management System----------------------------------------------------------------------->
+
+
+<----(1) employee table:-
+
+hr_management_system=# select * from employee;
+ emp_id |  name   |                address                 |    dob     | gender | joining_date | dept_id | curr_salary |  last_comp   | years_worked | pos_id | client_id 
+--------+---------+----------------------------------------+------------+--------+--------------+---------+-------------+--------------+--------------+--------+-----------
+      4 | shilpa  | sector 23  Faridabad Haryana           | 1996-03-09 | Female | 2016-07-19   |     102 |       15000 | mphasis      |            1 |      2 |          
+      8 | Siya    | Janakpuri Delhi                        | 1994-12-05 | Female | 2020-06-09   |     102 |       25000 | leeway       |            7 |      2 |          
+      2 | Rahul   | Jawahar colony Nit Faridabad Haryana   | 1998-07-18 | Male   | 2020-09-25   |     102 |       15000 | global tech  |            2 |      2 |          
+      3 | Karan   | sector 3  Faridabad Haryana            | 1994-09-11 | Male   | 2018-01-12   |     104 |       18000 | alphacs      |            6 |      4 |          
+      5 | deepti  | bhagat colony  Ballavgarh  Haryana     | 1992-08-01 | Female | 2014-05-13   |     101 |       12000 | moglix       |            3 |      1 |       111
+      7 | Manish  | mohan state Delhi                      | 1995-11-30 | Male   | 2019-02-23   |     101 |       14000 | manacle      |            2 |      1 |       112
+      1 | Harsh   | Parvatiya colony Nit Faridabad Haryana | 2000-04-11 | Male   | 2021-02-23   |     101 |       10000 | rocket media |            4 |      1 |       113
+      9 | Deepika | karol Bagh  Delhi                      | 1996-09-16 | Female | 2021-01-09   |     103 |       30000 | global tech  |            2 |      3 |       114
+     11 | Shikha  | Palwal  Haryana                        | 1999-04-12 | Female | 2020-02-17   |     105 |       26000 | manacle      |            6 |      5 |       115
+      6 | Deepak  | meethapur Delhi                        | 1998-10-29 | Male   | 2018-09-19   |     106 |       20000 | rocket media |            3 |      6 |       116
+     10 | Tina    | Janakpuri  Delhi                       | 1992-08-18 | Female | 2020-05-29   |     106 |       28000 | moglix       |            4 |      7 |       112
+(11 rows)
+
+
+
+<----(2)clients table:-
+
+hr_management_system=# select * from clients ;
+ c_id | c_name | c_address |   phone   
+------+--------+-----------+-----------
+  111 | kapil  | new delhi | 999076022
+  112 | Steve  | uk        | 123076022
+  113 | kevin  | usa       | 123046022
+  114 | shiv   | mumbai    |  98744602
+  115 | dipesh | Haryana   |  88944602
+  116 | rakesh | Bangalore | 999944602
+(6 rows)
+
+
+<----(3)department table:-
+
+hr_management_system=# select * from department;
+ dept_id |        dept_name         
+---------+--------------------------
+     101 | Trainee
+     102 | Sales
+     103 | Research and Developmemt
+     104 | Human Resource
+     105 | Quality Assurance
+     106 | Technical operations
+(6 rows)
+
+
+<-----(4)attendence table:-
+
+hr_management_system=# select * from attendence;
+ aemp_id |    date    | entry_time | exit_time 
+---------+------------+------------+-----------
+       1 | 2021-03-01 | 10:15:00   | 05:30:00
+       2 | 2021-03-01 | 10:00:00   | 05:00:00
+       3 | 2021-03-01 | 09:50:00   | 05:15:00
+       4 | 2021-03-01 | 10:50:00   | 05:15:00
+       5 | 2021-03-01 | 10:05:00   | 05:00:00
+       6 | 2021-03-01 | 10:00:00   | 05:00:00
+       7 | 2021-03-01 | 09:45:00   | 05:14:00
+       8 | 2021-03-01 | 09:58:00   | 05:00:00
+       9 | 2021-03-01 | 10:00:00   | 05:00:00
+      10 | 2021-03-01 | 10:15:00   | 05:00:00
+      11 | 2021-03-01 | 10:00:00   | 05:00:00
+(11 rows)
+
+
+
+<----(5)position table:-
+
+hr_management_system=# select * from position;
+ pos_id |      pos_name       
+--------+---------------------
+      1 | Trainee
+      2 | sales Executive
+      3 | Development manager
+      4 | HR
+      5 | Quality manager
+      7 | Senior developer
+      6 | Associate developer
+(7 rows)
+
+
+
+<----(6)prev_salary table:-
+
+hr_management_system=# select * from prev_salary;
+ semp_id | amount | from_date  |  to_date   
+---------+--------+------------+------------
+       1 |   8000 | 2021-02-23 | 2021-03-12
+       2 |  12000 | 2020-09-25 | 2021-01-12
+       3 |  15000 | 2019-04-18 | 2020-05-19
+       4 |  12000 | 2016-07-19 | 2018-11-12
+       5 |  10000 | 2016-09-15 | 2018-08-19
+       6 |  16000 | 2018-09-19 | 2020-02-13
+       7 |  11000 | 2019-02-23 | 2019-09-18
+       9 |  25000 | 2021-01-09 | 2021-03-12
+       8 |  20000 | 2020-06-09 | 2021-01-18
+      10 |  22000 | 2020-05-29 | 2021-01-12
+      11 |  22000 | 2020-02-17 | 2021-01-12
+(11 rows)
+
+
+
+<----(7)project table:-
+
+hr_management_system=# select * from project;
+ project_id |   pname    | pclient_id | technology | started_from 
+------------+------------+------------+------------+--------------
+          1 | netgym     |        111 | Ruby       | 2021-02-21
+          2 | trademarks |        112 | python     | 2021-01-15
+          3 | google     |        113 | java       | 2021-01-20
+          4 | whirlpool  |        114 | java       | 2021-03-05
+          5 | Gaonic     |        115 | nodeJs     | 2021-03-10
+          6 | flipcart   |        116 | php        | 2020-12-30
+          7 | zomato     |        112 | java       | 2021-01-25
+          8 | olx        |        113 | .net       | 2021-02-25
+(8 rows)
+
+
+
+
+
+
